@@ -42,20 +42,20 @@ async function setCounter() {
     alert("Response: " + response.data.result); // we could to something meaningful with the return value here ... 
 }
 
-async function getCounter() {
-    // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/counter");
-    var counter = response.data.result;
+// async function getCounter() {
+//     // request the variable "counter"
+//     var response = await axios.get(rootUrl + "/api/device/0/variable/counter");
+//     var counter = response.data.result;
 
-    // update the html element
-    document.getElementById("counter").innerHTML = counter;
-}
+//     // update the html element
+//     document.getElementById("counter").innerHTML = counter;
+// }
 
 async function getTrainingStatus() {
     // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/Training");
+    var response = await axios.get(rootUrl + "/api/device/0/variable/Training_Status");
     var counter = response.data.result;
 
     // update the html element
-    document.getElementById("Training").innerHTML = counter;
+    document.getElementById("TrainingStatus").innerHTML = counter;
 }
