@@ -20,13 +20,13 @@ function updateVariables(data) {
     // if (data.eventname === "MyEvent"){
     //     document.getElementById("counterevent").innerHTML = data.eventData;
     // }
-    if (data.eventname === "Training"){
+    if (data.eventName === "Training"){
         document.getElementById("trainingevent").innerHTML = data.eventData;
     }
-    if (data.eventname === "Hantelbewegungen"){
+    if (data.eventName === "Hantelbewegungen"){
         document.getElementById("hantelbewegungevent").innerHTML = data.eventData;
     }
-    if (data.eventname === "Durchschnittliche Hantelbewegungen pro Minute"){
+    if (data.eventName === "Durchschnittliche Hantelbewegungen pro Minute"){
         document.getElementById("avgkadenzevent").innerHTML = data.eventData;
     }
 }
