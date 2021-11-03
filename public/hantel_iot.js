@@ -17,9 +17,9 @@ initSSE();
 function updateVariables(data) {
     // update the html elements
     document.getElementById("lastevent").innerHTML = JSON.stringify(data);
-    if (data.eventname === "MyEvent"){
-        document.getElementById("counterevent").innerHTML = data.eventData;
-    }
+    // if (data.eventname === "MyEvent"){
+    //     document.getElementById("counterevent").innerHTML = data.eventData;
+    // }
     if (data.eventname === "Training"){
         document.getElementById("trainingevent").innerHTML = data.eventData;
     }
