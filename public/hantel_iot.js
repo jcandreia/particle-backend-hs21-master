@@ -50,3 +50,12 @@ async function getCounter() {
     // update the html element
     document.getElementById("counter").innerHTML = counter;
 }
+
+async function getTrainingStatus() {
+    // request the variable "counter"
+    var response = await axios.get(rootUrl + "/api/device/0/variable/Training");
+    var counter = response.data.result;
+
+    // update the html element
+    document.getElementById("Training").innerHTML = counter;
+}
