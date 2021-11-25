@@ -51,20 +51,20 @@ function updateVariables(data) {
 //     document.getElementById("counter").innerHTML = counter;
 // }
 
-async function getCO2() {
-    // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/CO2");
-    var counter = response.data.result;
+// async function getCO2() {
+//     // request the variable "counter"
+//     var response = await axios.get(rootUrl + "/api/device/0/variable/CO2");
+//     var counter = response.data.result;
+
+//     // update the html element
+//     document.getElementById("CO2").innerHTML = counter;
+// }
+
+// async function getTemp() {
+//     // request the variable "counter"
+//     var response = await axios.get(rootUrl + "/api/device/0/variable/Temp");
+//     var counter = response.data.result;
 
     // update the html element
-    document.getElementById("CO2").innerHTML = counter;
-}
-
-async function getTemp() {
-    // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/Temp");
-    var counter = response.data.result;
-
-    // update the html element
-    document.getElementById("Temp").innerHTML = counter;
-}
+//     document.getElementById("Temp").innerHTML = counter;
+// }
