@@ -5,9 +5,9 @@ exports.sendEvent = null;
 exports.registerEventHandlers = function (source) {
     //source.addEventListener('MyEvent', handleMyEvent);
     // Register more event handlers here
-    source.addEventListener('Training', handleTraining);
-    source.addEventListener('Hantelbewegungen', handleReps);
-    source.addEventListener('Durchschnittliche Hantelbewegungen pro Minute', handleKadenz);
+    source.addEventListener('CO2_Level', handleTraining);
+    source.addEventListener('CO2_Status', handleReps);
+    source.addEventListener('CO2_Alarm', handleKadenz);
 }
 
 // function handleMyEvent(event) {
@@ -38,7 +38,7 @@ exports.registerEventHandlers = function (source) {
 //     }
 // }
 
-function handleTraining(event) {
+function handleLevel(event) {
     // read variables from the event
     var data = {
         eventName: event.type,
