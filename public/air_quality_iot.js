@@ -20,27 +20,27 @@ function updateVariables(data) {
     // if (data.eventname === "MyEvent"){
     //     document.getElementById("counterevent").innerHTML = data.eventData;
     // }
-    if (data.eventName === "Training"){
-        document.getElementById("trainingevent").innerHTML = data.eventData;
+    if (data.eventName === "CO2_Level"){
+        document.getElementById("levelevent").innerHTML = data.eventData;
     }
-    if (data.eventName === "Hantelbewegungen"){
-        document.getElementById("hantelbewegungevent").innerHTML = data.eventData;
+    if (data.eventName === "CO2_Status"){
+        document.getElementById("statusevent").innerHTML = data.eventData;
     }
-    if (data.eventName === "Durchschnittliche Hantelbewegungen pro Minute"){
-        document.getElementById("avgkadenzevent").innerHTML = data.eventData;
+    if (data.eventName === "CO2_Alarm"){
+        document.getElementById("alarmevent").innerHTML = data.eventData;
     }
 }
 
-async function setCounter() {
-    // read the value from the input field
-    var counter = document.getElementById("counterinput").value;
+// async function setCounter() {
+//     // read the value from the input field
+//     var counter = document.getElementById("counterinput").value;
 
-    // call the function
-    var response = await axios.post(rootUrl + "/api/device/0/function/setCounter", { arg: counter });
+//     // call the function
+//     var response = await axios.post(rootUrl + "/api/device/0/function/setCounter", { arg: counter });
 
-    // Handle the response from the server
-    alert("Response: " + response.data.result); // we could to something meaningful with the return value here ... 
-}
+//     // Handle the response from the server
+//     alert("Response: " + response.data.result); // we could to something meaningful with the return value here ... 
+// }
 
 // async function getCounter() {
 //     // request the variable "counter"
@@ -51,11 +51,20 @@ async function setCounter() {
 //     document.getElementById("counter").innerHTML = counter;
 // }
 
-async function getTrainingStatus() {
+async function getCO2() {
     // request the variable "counter"
-    var response = await axios.get(rootUrl + "/api/device/0/variable/Training_Status");
+    var response = await axios.get(rootUrl + "/api/device/0/variable/CO2");
     var counter = response.data.result;
 
     // update the html element
-    document.getElementById("TrainingStatus").innerHTML = counter;
+    document.getElementById("CO2").innerHTML = counter;
+}
+
+async function getTemp() {
+    // request the variable "counter"
+    var response = await axios.get(rootUrl + "/api/device/0/variable/Temp");
+    var counter = response.data.result;
+
+    // update the html element
+    document.getElementById("Temp").innerHTML = counter;
 }

@@ -12,26 +12,33 @@
     <!-- Events example -->
     <p>Last Event: <span id="lastevent"></span></p>
     <!-- <p>Counter (Event): <span id="counterevent"></span></p> -->
-    <p>Training Status: <span id="trainingevent"></span></p>
-    <p>Hantelbewegungen: <span id="hantelbewegungevent"></span></p>
-    <p>Durchschnittliche Kadenz: <span id="avgkadenzevent"></span></p>
+    <p>CO2 Level: <span id="levelevent"></span></p>
+    <p>CO2 Status: <span id="statusevent"></span></p>
+    <p>CO2 Alarm: <span id="alarmevent"></span></p>
 
     <hr>
     <h4>Variables</h4>
     <!-- Read variables example -->
-    <p>Training Status: <span id="TrainingStatus"></span></p>
-    <button onclick="getTrainingStatus()">Get Training Status</button>
+    <p>CO2 Level: <span id="CO2"></span></p>
+    <button onclick="getCO2()">Get CO2 Level</button>
     <br>
 
     <hr>
-    <h4>Functions</h4>
+    <h4>Variables</h4>
+    <!-- Read variables example -->
+    <p>Temperatur Status: <span id="Temp"></span></p>
+    <button onclick="getTemp()">Get Temperatur</button>
+    <br>
+
+    <!-- <hr>
+    <h4>Functions</h4> -->
     <!-- Call functions example  -->
-    <p>Set Counter</p>
+    <!-- <p>Set Counter</p>
     <input type="number" id="counterinput" value="0">
-    <button onclick="setCounter()">Set counter</button>
+    <button onclick="setCounter()">Set counter</button> -->
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="hantel_iot.js"></script>
+    <script src="air_quality_iot.js"></script>
 </body>
 
 </html>
