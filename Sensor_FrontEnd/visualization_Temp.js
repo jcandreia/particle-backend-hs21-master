@@ -106,8 +106,8 @@ function drawChart() {
         vAxis: {
             // Range der vertikalen Achse
             viewWindow: {
-                min: 0,
-                max: maxLevel
+                min: 18,
+                max: 28
             },
         }
     };
