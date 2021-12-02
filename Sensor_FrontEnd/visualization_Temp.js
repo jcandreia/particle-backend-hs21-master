@@ -26,7 +26,7 @@ function updateVariables(data) {
 
     if (data.eventName === "Temperatur") {
         // Erhaltenen Wert in der Variable 'CO2' speichern
-        var Temp = Number(data.eventData)-1;
+        var Temp = Number(data.eventData)-3;
         //console.log(lux);
 
         // Wert am Ende des Arrays 'allMeasurements' hinzufügen
