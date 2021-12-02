@@ -19,34 +19,31 @@ initSSE();
 var allMeasurements = [];
 
 // Maximaler Lux Level für die Berechnung des Prozentwerts und als maximaler Wert für das Chart.
-// -- TODO Aufgabe 1 -- 
-// Maximalwert anpassen
-var maxLevel = 1000;
+var maxLevel = 40;
 
 // Diese Funktion wird immer dann ausgeführt, wenn ein neues Event empfangen wird.
 function updateVariables(data) {
 
-    if (data.eventName === "Lux") {
-        // Erhaltenen Wert in der Variable 'lux' speichern
-        var lux = Number(data.eventData);
+    if (data.eventName === "Temperatur") {
+        // Erhaltenen Wert in der Variable 'CO2' speichern
+        var Temp = Number(data.eventData)-1;
         //console.log(lux);
 
         // Wert am Ende des Arrays 'allMeasurements' hinzufügen
-        allMeasurements.push(lux);
+        allMeasurements.push(Temp);
 
         // Wert in Prozent umrechnen und in 'level' speichern
-        var level = lux * (100 / maxLevel);
+        var level = Temp * (100 / maxLevel);
 
         // Farbe des Balkens abhängig von Level festlegen
         // Liste aller unterstützten Farben: https://www.w3schools.com/cssref/css_colors.asp
-        // -- TODO Aufgabe 2 -- 
-        // Weitere Farben abhängig vom Level
-        if (level < 50) {
-            color = "Blue";
+        if (level < 23) {
+            color = "Green";
         } else {
-            color = "Orange";
+            color = "Red";
         }
 
+        
         // CSS Style für die Hintergrundfarbe des Balkens
         var colorStyle = "background-color: " + color + " !important;";
 
@@ -55,50 +52,51 @@ function updateVariables(data) {
 
         // Oben definierte Styles für Hintergrundfarbe und Breite des Balkens verwenden, um
         // den Progressbar im HTML-Dokument zu aktualisieren
-        document.getElementById("luxlevel-bar").style = colorStyle + widthStyle;
+        document.getElementById("Templevel-bar").style = colorStyle + widthStyle;
 
         // Text unterhalb des Balkens aktualisieren
-        document.getElementById("luxlevel-text").innerHTML = lux + " Lux"
+        document.getElementById("Templevel-text").innerHTML = Temp + "  °C"
 
-        // Durchschnitt aller bisherigen Messungen berechnen und in 'luxAverage' speichern
-        var luxSum = 0;
-        for (var measurement of allMeasurements) {
-            luxSum = luxSum + measurement;
-        }
-        var luxAverage = luxSum / allMeasurements.length;
-        //console.log(luxAverage);
+         // Durchschnitt aller bisherigen Messungen berechnen und in 'luxAverage' speichern
+        // var luxSum = 0;
+        // for (var measurement of allMeasurements) {
+        //     luxSum = luxSum + measurement;
+        // }
+        // var luxAverage = luxSum / allMeasurements.length;
+        // //console.log(luxAverage);
 
-        // -- TODO Aufgabe 3 -- 
-        // Durchschnittlichen Lux-Wert (luxAverage) in Prozent umrechnen und als Balken und Text anzeigen
-        
+        // // Durchschnittlichen Lux-Wert in Prozent umrechnen und als Balken und Text anzeigen
+        // var levelAverage = luxAverage * (100 / maxLevel);
+        // var widthStyleAverage = "width: " + levelAverage + "%;"
+        // document.getElementById("luxlevel-average-bar").style = widthStyleAverage;
+        // document.getElementById("luxlevel-average-text").innerHTML = luxAverage.toFixed(2) + " Lux"; // Auf 2 Nachkommastellen reduzieren
 
-        // Wert im Chart hinzufügen
-        addData(lux);
-    }
-}
+         // Wert im Chart hinzufügen
+        addData(Temp);
+    } 
+   
+}   
 
 //////////////////////////////////
 /////   Code für das Chart   /////
 //////////////////////////////////
 
-// Line Chart Dokumentation: https://developers.google.com/chart/interactive/docs/gallery/linechart
-
 // Chart und Variablen 
 var chartData, chartOptions, chart;
-google.charts.load('current', { packages: ['corechart'] });
+google.charts.load('current', { packages: ['line','corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
-// Chart initialisieren. Diese Funktion wird einmalig aufgerufen, wenn die Page geladen wurde.
+//Chart initialisieren. Diese Funktion wird einmalig aufgerufen, wenn die Page geladen wurde.
 function drawChart() {
     // Daten mit dem Dummy-Wert ["", 0] initialisieren. 
     // (Dieser Dummy-Wert ist nötig, damit wir das Chart schon anzeigen können, bevor 
     // wir Daten erhalten. Es können keine Charts ohne Daten gezeichnet werden.)
-    chartData = google.visualization.arrayToDataTable([['Time', 'Lux'], ["", 0]]);
+    chartData = google.visualization.arrayToDataTable([['Time', 'Temp'], ["", 0]]);
     // Chart Options festlegen
     chartOptions = {
-        title: 'Lux Level',
+        title: 'Temperatur Gehalt',
         hAxis: { title: 'Time' },
-        vAxis: { title: 'Lux' },
+        vAxis: { title: 'Temp (°C)' },
         animation: {
             duration: 300, // Dauer der Animation in Millisekunden
             easing: 'out',
@@ -114,17 +112,22 @@ function drawChart() {
         }
     };
     // LineChart initialisieren
-    chart = new google.visualization.LineChart(document.getElementById('luxlevel-chart'));
+    chart = new google.visualization.LineChart(document.getElementById('Templevel-chart'));
     chartData.removeRow(0); // Workaround: ersten (Dummy-)Wert löschen, bevor das Chart zum ersten mal gezeichnet wird.
     chart.draw(chartData, chartOptions); // Chart zeichnen
 }
 
-// Eine neuen Wert ins Chart hinzufügen
-function addData(lux) {
 
-    // -- TODO Aufgabe 4 --
-    // Nur die letzten 10 gemessenen Werte anzeigen.
-    // Tipp: mit chartData.removeRow(0) kann der erste Eintrag im Chart entfernt werden.
+
+
+
+// Eine neuen Wert ins Chart hinzufügen
+function addData(Temp) {
+
+    if (allMeasurements.length > 50) {
+        // Älteste Messung in den Chartdaten entfernen 
+        chartData.removeRow(0);
+    }
 
     // aktuelles Datum/Zeit
     var date = new Date();
@@ -132,7 +135,7 @@ function addData(lux) {
     var localTime = date.toLocaleTimeString();
 
     // neuen Wert zu den Chartdaten hinzufügen
-    chartData.addRow([localTime, lux]);
+    chartData.addRow([localTime, Temp]);
 
     // Chart neu rendern
     chart.draw(chartData, chartOptions);
