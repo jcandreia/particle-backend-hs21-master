@@ -37,12 +37,12 @@ function updateVariables(data) {
 
         // Farbe des Balkens abhängig von Level festlegen
         // Liste aller unterstützten Farben: https://www.w3schools.com/cssref/css_colors.asp
-        if (level < 800) {
+        if (level < 32) {
             color = "Green";
-        } else if (level < 1100){
+        } else if (level < 44){
             color = "Orange";
         }
-        else if (level > 1100){
+        else if (level > 44){
             color = "Red";
         }
 
