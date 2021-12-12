@@ -45,6 +45,7 @@
             <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Startseite.html" style="padding: 10px 20px;">Startseite</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="CO2.html" style="padding: 10px 20px;">CO2</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Temperatur.html" style="padding: 10px 20px;">Temperatur</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Demo.html" style="padding: 10px 20px;">Demo</a>
 </li></ul>
           </div>
           <div class="u-custom-menu u-nav-container-collapse">
@@ -54,6 +55,7 @@
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Startseite.html" style="padding: 10px 20px;">Startseite</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="CO2.html" style="padding: 10px 20px;">CO2</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Temperatur.html" style="padding: 10px 20px;">Temperatur</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Demo.html" style="padding: 10px 20px;">Demo</a>
 </li></ul>
               </div>
             </div>
@@ -84,10 +86,8 @@
     </section>
     <section class="u-clearfix u-section-2" id="sec-068a">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Raum Empfehlung</h2>
+        <h3 class="u-text u-text-default u-text-1">Raum Empfehlung</h3>
         <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
-          </p><!-- <p>Empfehlung: <span id="empfevent"></span></p> -->
-          <hr>
           <p>Empfehlung: <span id="Empfehlung"></span>
           </p>
           <button onclick="getEmpfehlung()">Raum Empfehlung</button>
@@ -99,21 +99,10 @@
     </section>
     <section class="u-clearfix u-section-3" id="sec-9406">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <!-- <h2 class="u-text u-text-default u-text-1">Visualisation der Daten</h2> -->
+        <h2 class="u-text u-text-default u-text-1">Visualisation der Daten</h2>
         <div class="u-clearfix u-custom-html u-custom-html-1"></div>
-        <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-2"><!-- Required meta tags -->
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Bootstrap CSS -->
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-          <div class="container">
-            <h3 class="mt-5">CO2 Level (Aktueller Wert)</h3><!-- Aktueller Lux Level als Progressbar -->
-            <div class="progress">
-              <div id="CO2level-bar" class="bg-success progress-bar" role="progressbar" style="width: 0%"></div>
-            </div><!-- Aktueller Lux Level als Text -->
-            <p id="CO2level-text">Warte auf erste Messung...</p>
-            <h3 class="mt-5">CO2 Gehalt (Verlauf)</h3><!-- Verlauf Lux Level als Chart -->
-            <div id="CO2level-chart" style="max-width:100%; height:400px"></div>
-          </div><!-- Bootstrap JavaScript -->
+        <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-2">
+          <div id="CO2level-chart" style="max-width:100%; height:400px"></div><!-- Bootstrap JavaScript -->
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script><!-- Google Charts JavaScript -->
           <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!-- Eigenes JavaScript -->
           <script src="visualization_CO2.js"></script>

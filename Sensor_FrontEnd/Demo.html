@@ -3,18 +3,16 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Temperatur Messung &amp; Visualisation, Daten, Visualisation">
+    <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
-    <title>Temperatur</title>
+    <title>Demo</title>
     <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Temperatur.css" media="screen">
+<link rel="stylesheet" href="Demo.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.0.3, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
-    
-    
     
     
     <script type="application/ld+json">{
@@ -24,7 +22,7 @@
 		"logo": "images/co2-gas-carbon-emission-reduction-vector.jpg"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Temperatur">
+    <meta property="og:title" content="Demo">
     <meta property="og:description" content="">
     <meta property="og:type" content="website">
   </head>
@@ -62,62 +60,16 @@
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
           </div>
         </nav>
-      </div></header> 
-    <section class="u-clearfix u-section-1" id="sec-0195">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-style u-image u-layout-cell u-size-30 u-image-1" data-image-width="1573" data-image-height="1049">
-                <div class="u-container-layout u-container-layout-1"></div>
-              </div>
-              <div class="u-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle u-container-layout-2">
-                  <h2 class="u-text u-text-default u-text-1">Temperatur Messung &amp; Visualisation</h2>
-                  <p class="u-text u-text-2">Die Temperatur wurde mit dem Sensor <span style="font-weight: 700;">CCS811+BME280 CO2 Air Quality Umwelt Sensor&nbsp;<span style="font-weight: 400;"> von DFRobot &amp; dem Argon gemessen. Die Daten wurden in Form von Events in die Particle Cloud geschrieben. Diese Events werden in der Grafik unten angezeigt.</span>
-                    </span>
-                  </p>
-                </div>
-              </div>
-            </div>
+      </div></header>
+    <section class="u-align-center u-clearfix u-gradient u-section-1" id="sec-ec06">
+      <div class="u-clearfix u-sheet u-valign-middle-xs u-sheet-1">
+        <div class="u-align-left u-expanded-width-sm u-expanded-width-xs u-video u-video-1">
+          <div class="embed-responsive embed-responsive-1">
+            <iframe style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" class="embed-responsive-item" src="https://www.youtube.com/embed/tbwUzfIPsjg?mute=0&amp;showinfo=0&amp;controls=0&amp;start=0" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-section-2" id="carousel_b65d">
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Daten</h2>
-        <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
-          <h4>Events</h4><!-- Events example -->
-          <p>Last Event: <span id="lastevent"></span>
-          </p>
-          <p>Raum Temperatur: <span id="tempevent"></span>
-          </p>
-          <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-          <script src="air_quality_iot.js"></script>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-section-3" id="sec-fb70">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-default u-text-1">Visualisation</h2>
-        <div class="u-clearfix u-custom-html u-custom-html-1"><!-- Required meta tags -->
-          <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Bootstrap CSS -->
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-          <div class="container">
-            <h2 class="mt-5">Temperatur</h2><!-- Durchschnittlicher Lux Level als Progressbar -->
-            <div class="progress">
-              <div id="Templevel-bar" class="bg-success progress-bar" role="progressbar" style="width: 0%"></div>
-            </div><!-- Durchschnittlicher Lux Level als Text -->
-            <p id="Templevel-text">Warte auf erste Messung...</p>
-            <h2 class="mt-5">Temperatur (°C) (Verlauf)</h2><!-- Verlauf Lux Level als Chart -->
-            <div id="Templevel-chart" style="max-width:100%; height:400px"></div>
-          </div><!-- Bootstrap JavaScript -->
-          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script><!-- Google Charts JavaScript -->
-          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!-- Eigenes JavaScript -->
-          <script src="visualization_Temp.js"></script>
-        </div>
+        <h2 class="u-text u-text-default u-text-1">Demo des CO2 Projekt</h2>
+        <p class="u-text u-text-2">In diesem Video wird demonstriert, wie die Messung des CO2 Gehalts&nbsp; mit dem Aktor (Philips Hue) interagiert. Das ansteuern der Lampe bei erreichen von einem Schwellwert (1100ppm) wird durch die Applikation IFTTT umgesetzt.</p>
       </div>
     </section>
     
@@ -127,14 +79,14 @@
         </p>
       </div></footer>
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
+      <a class="u-link" href="https://nicepage.com/website-design" target="_blank">
+        <span>Website Design</span>
       </a>
       <p class="u-text">
         <span>created with</span>
       </p>
-      <a class="u-link" href="" target="_blank">
-        <span>Website Builder Software</span>
+      <a class="u-link" href="https://nicepage.com/website-builder" target="_blank">
+        <span>Website Builder</span>
       </a>. 
     </section>
   </body>
